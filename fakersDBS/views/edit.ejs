@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Edit username </h1>
+    <% for (const user of result) {%>
+        <form method="post" action="/user/<%= user.id %>?_method=PATCH">
+            <textarea name="username" id="">
+                <%= user.username %>
+            </textarea>
+
+            <br>
+            <br>
+            <input type="password" name="password" id="" placeholder="Enter your password">
+            <br><br>
+            <button>Edit Username</button>
+        </form>
+        <% } %>
+</body>
+
+</html>
