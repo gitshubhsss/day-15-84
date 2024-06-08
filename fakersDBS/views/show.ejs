@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>All students data</h1>
+    <table border="1">
+        <tr>
+            <th>idx</th>
+            <th>id</th>
+            <th>username</th>
+            <th>email</th>
+            <th>Edit</th>
+        </tr>
+        <% let idx=1; %>
+        <% for (const user of result) {%>
+            <tr>
+                <td><%= idx++ %></td>
+                <td><%= user.id %></td>
+                <td><%= user.username %></td>
+                <td><%= user.email %></td>
+                <td><button><a href="http://localhost:8080/user/<%= user.id %>/edit">Edit</a></button></td>
+            </tr>
+            <% } %>
+    </table>
+</body>
+
+</html>
