@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Date Selection</title>
+</head>
+<body>
+  <label for="start-date">Start Date:</label>
+  <input type="date" id="start-date" onchange="updateEndDate()"><br><br>
+
+  <label for="end-date">End Date:</label>
+  <input type="date" id="end-date" disabled>
+  
+  <script>
+    function updateEndDate() {
+      var startDate = new Date(document.getElementById("start-date").value);
+      var endDate = new Date(startDate);
+      endDate.setMonth(endDate.getMonth() + 1);
+      document.getElementById("end-date").value = endDate.toISOString().split('T')[0];
+    }
+  </script>
+</body>
+</html>
